@@ -1,0 +1,107 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the board horizontally */
+  justify-content: center; /* Centers the board vertically */
+  height: 100vh; /* Ensures the board takes up the full viewport height */
+  /* You might want to add some padding around the board */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.line {
+  display: flex;
+  justify-content: center; /* Centers the tiles within each line */
+  margin-bottom: 8px; /* Add some space between the lines */
+}
+
+.tile {
+  width: 60px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
+  border: 2px solid #ccc; /* Style of the tile */
+  margin: 4px; /* Space between tiles */
+  font-size: 24px; /* Make sure the letters are big enough */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase; /* Ensure letters are uppercase */
+  font-weight: bold; /* Make the letters bold */
+  background-color: white; /* Default tile color */
+  border-radius: 5px;
+}
+
+.tile.correct {
+  background-color: #6aaa64; /* Green for correct letter and position */
+  color: white;
+  border-color: #6aaa64;
+}
+
+.tile.close {
+  background-color: #c9b458; /* Yellow for correct letter, wrong position */
+  color: white;
+  border-color: #c9b458;
+}
+
+.tile.incorrect {
+  background-color: #787c7e; /* Gray for incorrect letter */
+  color: white;
+  border-color: #787c7e;
+}
+
+.game-over-message {
+  position: absolute; /* Changed from fixed to absolute */
+  /* Remove top and left, we will use bottom or top */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  bottom: 0;  /* Position at the bottom */
+  width: 100%; /* Make it span the whole width */
+  margin-top: 20px; /* Add space between board and message */
+}
+.board {
+    margin-bottom: 100px; /* add margin to the board so that game over message does not overlap */
+}
+
+.game-over-message p {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.game-over-message button {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 250px;
+}
+
+.game-over-message button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.game-over-message button:active {
+  transform: scale(1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
